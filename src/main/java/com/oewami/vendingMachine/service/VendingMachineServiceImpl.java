@@ -4,13 +4,19 @@ import com.oewami.vendingMachine.dao.VendingMachineDao;
 import com.oewami.vendingMachine.dao.VendingMachineDaoImpl;
 import com.oewami.vendingMachine.dto.Change;
 import com.oewami.vendingMachine.dto.Item;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.util.List;
 
+@Component
 public class VendingMachineServiceImpl implements VendingMachineService {
 
+    @Autowired
     private VendingMachineDao dao;
+
+    @Autowired
     private Change change = new Change();
 
     public VendingMachineServiceImpl() {

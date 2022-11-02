@@ -3,13 +3,19 @@ package com.oewami.vendingMachine.ui;
 import com.oewami.vendingMachine.dto.Change;
 import com.oewami.vendingMachine.dto.Coins;
 import com.oewami.vendingMachine.dto.Item;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
-import java.util.*;
+import java.util.Map;
+import java.util.Set;
+import java.util.List;
 
+@Component
 public class VendingMachineView {
 
-    UserIO io;
+    @Autowired
+    private UserIO io;
 
     public VendingMachineView() { this.io = new UserIO(); }
 

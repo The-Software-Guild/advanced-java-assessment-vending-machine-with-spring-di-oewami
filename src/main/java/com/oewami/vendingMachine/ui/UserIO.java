@@ -1,9 +1,12 @@
 package com.oewami.vendingMachine.ui;
 
+import org.springframework.stereotype.Component;
+
 import java.math.BigDecimal;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
+@Component
 public class UserIO implements ReadableIO {
 
     final private Scanner scanner = new Scanner(System.in);

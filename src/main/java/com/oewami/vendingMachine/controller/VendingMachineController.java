@@ -1,17 +1,21 @@
 package com.oewami.vendingMachine.controller;
 
-import com.oewami.vendingMachine.dto.Change;
 import com.oewami.vendingMachine.dto.Item;
 import com.oewami.vendingMachine.service.*;
 import com.oewami.vendingMachine.ui.VendingMachineView;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class VendingMachineController {
 
+    @Autowired
     private VendingMachineView view;
+
+    @Autowired
     private VendingMachineService service;
-    private Change balance = new Change();
 
     public VendingMachineController() {
         this.view = new VendingMachineView();
@@ -29,7 +33,7 @@ public class VendingMachineController {
 
         while(isContinuing) {
             String input = view.getMenu();
-            view.displayBalance(balance.getBalance());
+            view.displayBalance(service.getBalance());
 
             switch(input) {
                 case "1":

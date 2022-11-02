@@ -1,11 +1,13 @@
 package com.oewami.vendingMachine.dto;
 
+import org.springframework.stereotype.Component;
+
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-
+@Component
 public class Change {
 
     private Map<Coins, Integer> change;

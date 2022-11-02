@@ -2,11 +2,14 @@ package com.oewami.vendingMachine.dao;
 
 import com.oewami.vendingMachine.dto.Item;
 import com.oewami.vendingMachine.service.PersistenceException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+@Component
 public class VendingMachineDaoImpl implements VendingMachineDao{
 
     private Map<String, Item> inventory;
