@@ -37,12 +37,13 @@ public class VendingMachineView {
     public void displayItems(List<Item> inventory) {
         System.out.println(String.format("\n|%-20s|| %7s || %5s", "Product Name", "Cost", "Qty"));
         System.out.println("-".repeat(40));
-        for(Item item : inventory) {
-            System.out.println(String.format("|%-20s|| $%6s || %5s",
-                    item.getName(),
-                    item.getCost().toString(),
-                    item.getInventory() > 0 ? item.getInventory() : "Out of Stock"));
-        }
+
+        inventory.stream().forEach(item -> System.out.println(
+                String.format("|%-20s|| $%6s || %5s",
+                        item.getName(),
+                        item.getCost().toString(),
+                        item.getInventory() > 0 ? item.getInventory() : "Out of Stock")));
+
         System.out.println("-".repeat(40));
     }
 
